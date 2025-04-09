@@ -46,7 +46,7 @@
             <el-menu-item index="3-2">竞赛</el-menu-item>
             <el-menu-item index="3-3">科创项目</el-menu-item>
           </el-sub-menu>
-          <el-menu-item index="4" @click="aside_func('Form')">
+          <el-menu-item index="4" @click="aside_func('FormText')">
             <el-icon>
               <setting />
             </el-icon>
@@ -78,8 +78,9 @@
 <script>
 import Aside1 from "../dashboard/aside1.vue";
 import Aside2 from "../dashboard/aside2.vue";
-import Form from "../dashboard/form.vue";
+//import Form from "../dashboard/form.vue";
 import UnderView from "../dashboard/underView.vue";
+import FormText from "../dashboard/formText.vue";
 
 export default {
   // 导入子组件
@@ -98,8 +99,9 @@ export default {
   components: {
     Aside1, // 局部注册子组件
     Aside2,
-    Form,
+    //Form,
     UnderView,
+    FormText
   },
 };
 </script>

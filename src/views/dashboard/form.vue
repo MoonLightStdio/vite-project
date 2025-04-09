@@ -52,11 +52,30 @@ export default {
   data() {
     return {
       Dialog: {
-        title: "",
+        //比赛名称
+        //获奖等级
+        //指导老师 （）
+        //学校
+        //学院
+        //专业
+        //学号
+        //姓名
+        //班级
+        //描述
+        competition_name: "",
+        prize_level: "",
+        student_id: "",
+        school: "",
+        college: "",
+        major: "",
+        student_class: "",
+        student_description: "",
+        pictures: [],
+        /*title: "",
         student_id: "",
         teacher_id: "",
         student_description: "",
-        pictures: [],
+        pictures: [],*/
       },
       teachers: [], // 用于存储教师数据
       dialogFormVisible: false, // 控制对话框显示
@@ -95,6 +114,11 @@ export default {
         console.error("请求教师数据时发生错误:", error);
       }
     },
+    async getMessage(){
+     try{
+      const response = await this.$axios.post('/getmessage',)
+     } 
+    }
     async submitForm() {
       const formRef = this.$refs.formRef;
       if (!formRef) return;
