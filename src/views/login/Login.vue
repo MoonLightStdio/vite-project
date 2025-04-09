@@ -1,3 +1,11 @@
+<!--
+ * @Author: MoonStdio juxiupan@163.com
+ * @Date: 2025-03-18 14:18:39
+ * @LastEditors: MoonStdio juxiupan@163.com
+ * @LastEditTime: 2025-03-29 17:53:02
+ * @FilePath: \vite-project\src\views\login\Login.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
     <div class="login_container">
         <!--登录框-->
@@ -10,8 +18,8 @@
             <!--form表单-->
             <el-form ref="loginFormRef" :rules="loginRules" :model="loginForm" class="login_form" label-width="0px">
                 <!--用户名-->
-                <el-form-item prop="username">
-                    <el-input v-model="loginForm.username"></el-input>
+                <el-form-item prop="student_id">
+                    <el-input v-model="loginForm.student_id"></el-input>
                 </el-form-item>
                 <!--密码-->
                 <el-form-item prop="password">
@@ -33,18 +41,14 @@ export default {
         return {
             //表单数据
             loginForm: {
-                username: "admin",
-                password: "123456",
+                student_id: "10011",
+                password: "password123",
             },
             //校验规则
             loginRules:{
-                username:[
-                { required: true, message: '用户名不能为空', trigger: 'blur' },
-                { min: 5, max: 12, message: '长度在 5 到 12 个字符', trigger: 'blur' },
-                ],
                 password:[
                 { required: true, message: '密码不能为空', trigger: 'blur' },
-                { min: 6, max: 10, message: '长度在 6 ~ 10 个字符', trigger: 'blur' },
+                { min: 6, max: 15, message: '长度在 6 ~ 10 个字符', trigger: 'blur' },
                 ],
             }
         }
@@ -65,7 +69,7 @@ export default {
                     this.$message.success("操作成功");
                     this.$router.push({path:"/home"});
                     console.log(res.user);
-                    window.sessionStorage.setItem("user",res.user);// 存储 user 对象
+                    window.sessionStorage.setItem("user", JSON.stringify(res.user) );// 存储 user 对象
                 }else{
                     this.$message.error("操作失败");
                 }

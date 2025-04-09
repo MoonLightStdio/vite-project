@@ -22,8 +22,8 @@
         data(){
             return{
                 StudentLoginForm:{
-                student_id:"admin",
-                password:"123456",
+                student_id:"20230204",
+                password:"zhaoliu123",
             },
             }
         },
